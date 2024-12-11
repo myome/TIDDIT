@@ -185,7 +185,8 @@ def read_cigar(cigar):
 
 	aligned_range=[]
 	current_pos=1
-	for i in range(0,len(SC)/2):
+	# MyOme  force division to become integer
+	for i in range(0,len(SC)//2):
 		if first and SC[i*2+1] == "M":
 			first = False
 		elif first and SC[i*2+1] == "S":

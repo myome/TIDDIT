@@ -47,7 +47,10 @@ def coverage(args):
 			spanning_read=True
 			continue
 
-		content=line.strip()	
+		content=line.strip()
+		# MyOme - initialize content for empty chromosomes
+		if content == "":
+			content = 0		
 		if mapq and not spanning_read and not spanning_pair:
 			coverage_data[chromosome][chromosome_index][1]=float(content)
 		elif mapq and spanning_pair and not spanning_read:
